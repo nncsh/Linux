@@ -1,0 +1,1 @@
+dd bs=2M if=/dev/sdX of=/dev/sdY conv=noerror,sync status=progress
