@@ -1,0 +1,2 @@
+losetup -r -f -P filename.img
+mount -o ro /dev/loop0pX /mountpoint
