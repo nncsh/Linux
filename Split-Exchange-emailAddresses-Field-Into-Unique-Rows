@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# For this version of the script, column A in the input CSV spaces were replaced with `, then in column B spaces were replaced with #.
+# The script then replaces the #characters with \n to split them onto a new line.
+# Once complete, open the output file and replace the remaining ` characters with spaces once again before find/replacing smtp: with nothing.
+
+while IFS=, read -r displayname emailaddresses
+do
+	tempoutput=($(echo $emailaddresses | sed 's/#/\n/g'))
+	for splitaddress in "${tempoutput[@]}"
+	do
+		echo "$displayname, $splitaddress" >> email-aliases-Expanded.csv
+	done
+
+done < input.csv
