@@ -1,0 +1,5 @@
+Use facl to allow more complex permissions than the usual XYZ allows.
+
+chmod -R 760 /home/target*
+setfacl -R -m u:otheruser1:rwx /home/target
+setfacl -R -m u:otheruser2:rwx /home/target
