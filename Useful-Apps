@@ -33,6 +33,7 @@ drill
 which
 w
 lsscsi
+tgt
 lsblk
 blkid
 cfdisk
