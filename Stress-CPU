@@ -1,0 +1,9 @@
+#Run once for each core.
+yes > /dev/null &
+
+#To stop
+killall yes
+
+#Or
+ps aux
+kill xx
