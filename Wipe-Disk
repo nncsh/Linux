@@ -1,0 +1,10 @@
+#HDD - Simply fill the drive with zeroes.
+shred /dev/sdX -vz -n 0
+
+#SSD, or USB, SD etc. - In an attempt to defeat wear-levelling controllers, create a single legitimate file which fills the whole drive (made up of random data) before zero filling.
+mkfs.ext4 /dev/sdX
+mount /dev/sdX /mountpoint
+touch /mountpoint/fillfile
+shred -v -n 1 -s 1P /mountpoint/fillfile
+umount /mountpoint
+shred -vz -n 0 /dev/sdX
