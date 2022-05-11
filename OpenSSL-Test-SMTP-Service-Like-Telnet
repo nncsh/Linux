@@ -1,0 +1,8 @@
+openssl s_client -connect domain-com.mail.protection.outlook.com:25 -starttls smtp -crlf
+
+ehlo
+mail from: user@domain.com
+rcpt to: user2@domain.com
+data
+.
+
