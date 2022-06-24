@@ -43,3 +43,5 @@ dig
 yes
 host
 whois
+f3 / f3probe
+rlwrap
