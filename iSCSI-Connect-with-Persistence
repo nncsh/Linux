@@ -1,0 +1,35 @@
+#This was constructed on Ubuntu 20.04
+
+#Add CHAP details to client device
+nano /etc/iscsi/iscsid.conf
+
+node.session.auth.authmethod = CHAP
+node.session.auth.username = username
+node.session.auth.password = password
+
+#Configure automatic connection to targets
+nano /etc/iscsi/iscsid.conf
+
+node.startup = automatic
+
+Comment out or remove node.startup = manual
+
+#Restart iSCSI service
+systemctl restart iscsid open-iscsi
+
+#List available LUNs
+iscsiadm -m discovery -t sendtargets -p 192.168.2.11
+
+#Connect to LUN and set to automatic connect
+iscsiadm -m node -T IQN_CHANGEME -p x.x.x.x -l
+iscsiadm -m node -T IQN_CHANGEME -p x.x.x.x -o update -n node.startup -v automatic
+
+
+##Info only commands
+
+#Create default connect file - if the above line did not
+nano /etc/iscsi/nodes/IQN_CHANGEME/default
+node.startup = automatic
+
+#Disconnect
+iscsiadm -m node -u
