@@ -1,0 +1,6 @@
+- Create partition table on target device manually using fdisk (under Linux) or diskpart (Windows). Use exact sizing for system partitions and new, smaller size for data etc.
+- Ensure target boot partition is marked as active/bootable (use fdisk or diskpart)
+- Start Clonezilla EXPERT MODE
+- Choose -icds option (do not check disk sizes)
+- Choose -k option (do not create parition table) (ie use the one you created manually)
+- Execute the clone
