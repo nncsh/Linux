@@ -2,5 +2,5 @@
 - Ensure target boot partition is marked as active/bootable (use fdisk or diskpart)
 - Start Clonezilla EXPERT MODE
 - Choose -icds option (do not check disk sizes)
-- Choose -k option (do not create parition table) (ie use the one you created manually)
+- Choose -k option (do not create partition table) (ie use the one you created manually)
 - Execute the clone
