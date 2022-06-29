@@ -27,6 +27,8 @@ iscsiadm -m node -T IQN_CHANGEME -p x.x.x.x -o update -n node.startup -v automat
 
 ##Info only commands
 
+remove erroneous entries from /etc/iscsi/nodes - this includes the ipv6 entries in the node folder if you do not use ipv6.
+
 #Create default connect file - if the above line did not
 nano /etc/iscsi/nodes/IQN_CHANGEME/default
 node.startup = automatic
