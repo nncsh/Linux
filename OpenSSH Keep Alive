@@ -1,0 +1,7 @@
+touch $HOME/.ssh/config
+chmod 600 $HOME/.ssh/config
+
+nano $HOME/.ssh/config
+
+Host *
+    ServerAliveInterval 240
