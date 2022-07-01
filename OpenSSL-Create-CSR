@@ -14,7 +14,7 @@ O = Company Name
 OU = Department Name
 L = Town
 ST = County
-C = UK
+C = GB
 
 [ req_ext ]
 subjectAltName = DNS: www.domain.com
