@@ -1,0 +1,9 @@
+#For Rocky Linux 8
+#External zone already has NAT/masquerade enabled
+#Change 'WAN side' NIC to external zone
+firewall-cmd --permanent --change-zone=eth0 --zone=external
+firewall-cmd --reload
+
+#Open services on now WAN side NIC
+firewall-cmd --permanent --zone=external --add-port=22/tcp
+firewall-cmd --reload
