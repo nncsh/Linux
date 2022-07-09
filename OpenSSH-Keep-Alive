@@ -5,4 +5,4 @@ chmod 600 $HOME/.ssh/config
 nano $HOME/.ssh/config
 
 Host *
-    ServerAliveInterval 240
+    ServerAliveInterval 60
