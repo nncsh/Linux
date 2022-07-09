@@ -1,3 +1,5 @@
+#Install bash-completion
+
 ssh-keygen
 touch $HOME/.ssh/config
 chmod 600 $HOME/.ssh/config
@@ -6,3 +8,7 @@ nano $HOME/.ssh/config
 
 Host *
     ServerAliveInterval 60
+
+Host server1.tld
+HostName=server1.tld
+User=username
