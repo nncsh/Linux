@@ -1,0 +1,28 @@
+dnf install targetcli
+systemctl enable target
+systemctl start target
+
+targetcli
+
+#Create backend storage
+cd /backstores/block
+create dev=/dev/sda4 name=sda4
+
+#Create iscsi target
+cd /iscsi
+create
+
+#Attach backend storage to target
+cd iscsi/iqn.2003-01.org.linux-iscsi.servername.x8664:sn.e23be2e809ea/tpg1/luns
+create /backstores/block/sda4
+
+#Allow connection from specified initiator
+cd iscsi/iqn.2003-01.org.linux-iscsi.servername.x8664:sn.e23be2e809ea/tpg1/acls
+create iqn.1991-05.com.microsoft:getthisstringfromtheinitiatorclient
+
+#Restrict IP binding to specific address
+cd iscsi/iqn.2003-01.org.linux-iscsi.servername.x8664:sn.e23be2e809ea/tpg1/portals/
+delete ip_address=0.0.0.0 ip_port=3260
+create ip_address=192.168.0.1 ip_port=3260
+
+#Save and quit
