@@ -1,0 +1,30 @@
+#Install tmux and sshpass - also do the first connection with ssh prior to using sshpass to accept the public key
+
+#!/bin/bash
+
+echo "Open tmux session"
+tmux new -s throttle -d
+sleep 2
+
+echo "Log in to switch"
+tmux send-keys -t throttle "sshpass -p password ssh manager@1.2.3.4" c-M
+sleep 7
+tmux send-keys -t throttle c-M
+sleep 2
+
+echo "Set interface to Auto"
+tmux send-keys -t throttle "conf" c-M
+sleep 2
+tmux send-keys -t throttle "interface 1 speed-duplex auto" c-M
+sleep 60
+tmux send-keys -t throttle "save" c-M
+sleep 2
+
+echo "Log out of switch"
+tmux send-keys -t throttle "logout" c-M
+sleep 2
+tmux send-keys -t throttle "y" c-M
+sleep 2
+
+echo "End tmux session"
+tmux send-keys -t throttle "exit" c-M
