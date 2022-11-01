@@ -1,0 +1,1 @@
+zypper in ldns nano tmux whois bind-utils iperf
