@@ -5,7 +5,7 @@
 
 - Linux (RHEL)
   Use nmtui to set NICs to 9000 MTU
-  If using nm-bond, set them inside the bond as slaves then also go to /etc/NetworkManager/system-connections/ and inside the bond config file add
+  If using nm-bond, set the NIC MTUs inside the bond as slave configs then also go to /etc/NetworkManager/system-connections/ and inside the bond config file add
   [ethernet]
   mtu=9000
   In order for it to be persistent
