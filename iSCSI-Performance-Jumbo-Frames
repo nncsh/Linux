@@ -1,0 +1,17 @@
+- Enable Jumbo Frames on the switch
+
+- Windows
+  Set MTU on storage-connected NICs to 9000 and reboot (this will also affect any team they are members of)
+
+- Linux (RHEL)
+  Use nmtui to set NICs to 9000 MTU
+  If using nm-bond, set them inside the bond as slaves then also go to /etc/NetworkManager/system-connections/ and inside the bond config file add
+  [ethernet]
+  mtu=9000
+  In order for it to be persistent
+
+- Testing
+  Windows
+  ping -f -l 8972 1.2.3.4
+  Linux
+  ping -s 8972 1.2.3.4
