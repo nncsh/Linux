@@ -9,6 +9,7 @@
   [ethernet]
   mtu=9000
   In order for it to be persistent
+  Reboot
 
 - Testing
   Windows
