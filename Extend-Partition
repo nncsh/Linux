@@ -1,6 +1,6 @@
 lsblk
 
-growpart /dev/vda 2
+growpart -u auto /dev/vda 2
 
 pvresize /dev/vda2
 
