@@ -1,0 +1,7 @@
+lsblk
+
+growpart /dev/vda 2
+
+pvresize /dev/vda2
+
+lvextend -r -l +100%FREE /dev/mapper/volume-group-to-be-expanded
