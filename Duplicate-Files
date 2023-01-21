@@ -1,0 +1,9 @@
+jdupes
+
+- Note that the silent delete function, keeping the first copy of a file and deleting others, seems to want to keep the instance of a file which comes alphabetically first, ie:
+
+/mnt/a/file.txt
+/mnt/b/file.txt
+/mnt/c/file.txt
+
+Only /mnt/a/file.txt will be kept.
