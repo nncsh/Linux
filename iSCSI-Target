@@ -25,4 +25,6 @@ cd iscsi/iqn.2003-01.org.linux-iscsi.servername.x8664:sn.e23be2e809ea/tpg1/porta
 delete ip_address=0.0.0.0 ip_port=3260
 create ip_address=192.168.0.1 ip_port=3260
 
+#Note - create IP portals on each NIC dedicated to iSCSI traffic (do not use NIC bonding), and then use MPIO on Windows servers to attach.
+
 #Save and quit
