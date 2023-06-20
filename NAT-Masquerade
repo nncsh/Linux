@@ -7,3 +7,12 @@ firewall-cmd --reload
 #Open services on now WAN side NIC
 firewall-cmd --permanent --zone=external --add-port=22/tcp
 firewall-cmd --reload
+
+
+#Ubuntu 22.04
+#Enable ip routing
+$ sudo sysctl net.ipv4.ip_forward=1  
+#Enable NAT
+$ sudo iptables --table nat --append POSTROUTING --out-interface wlo1 -j MASQUERADE   
+#Add firewall rule if needed
+$ sudo iptables --append FORWARD --in-interface enp45s0 -j ACCEPT
