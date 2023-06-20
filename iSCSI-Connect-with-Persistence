@@ -18,7 +18,7 @@ Comment out or remove node.startup = manual
 systemctl restart iscsid open-iscsi
 
 #List available LUNs
-iscsiadm -m discovery -t sendtargets -p 192.168.2.11
+iscsiadm -m discovery -t sendtargets -p x.x.x.x
 
 #Connect to LUN and set to automatic connect
 iscsiadm -m node -T IQN_CHANGEME -p x.x.x.x -l
