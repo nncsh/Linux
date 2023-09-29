@@ -3,3 +3,5 @@
 openssl pkcs12 -export -out combined.pfx -inkey cleartext.key -in combinedcertificates.txt -name "My Friendly Name"
 
 Note - add -legacy switch to the above if the target is a Windows <=2012
+
+To add chain files it is -certfile file.cer
