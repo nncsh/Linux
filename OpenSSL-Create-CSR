@@ -24,3 +24,6 @@ openssl req -new -config config.file -keyout certificate.key -out certificate.cs
 
 #Validate CSR
 openssl req -text -noout -verify -in certificate.csr
+
+
+openssl req -new -config config.file -keyout certificate.key -out certificate.csr && openssl req -text -noout -verify -in certificate.csr
