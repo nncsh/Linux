@@ -1,0 +1,8 @@
+<VirtualHost *:80>
+        ServerAdmin webmaster@123.fake.st
+        DocumentRoot /var/www/html
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+        ServerName      www.ouroldfakewebsite.com
+        RedirectMatch   301 /(.*) https://www.newwebsite.123.fake.st/filepathifwanted
+</VirtualHost>
