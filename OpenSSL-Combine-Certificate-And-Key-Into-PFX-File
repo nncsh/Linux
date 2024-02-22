@@ -1,8 +1,8 @@
 #First combine .crt and chain files (cabundle) into single txt file and remove password from key file. Walk it backwards eg:
 
 cn cert
-intermed1
 intermed2
+intermed1
 root
 
 openssl pkcs12 -export -out combined.pfx -inkey cleartext.key -in combinedcertificates.txt -name "My Friendly Name"
