@@ -17,7 +17,11 @@ ST = County
 C = GB
 
 [ req_ext ]
-subjectAltName = DNS: www.domain.com
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = domain.com
+DNS.2 = www.domain.com
 
 #Create CSR
 openssl req -new -config config.file -keyout certificate.key -out certificate.csr
